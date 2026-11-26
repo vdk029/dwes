@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle pelicula</title>
+</head>
+<body>
+
+<h1 th:text="${pelicula.titulo}"></h1>
+
+<img th:src="${pelicula.urlPortada}"
+     width="200" alt="Portada">
+
+<p>Genero: <span th:text="${pelicula.genero}"></span></p>
+
+<p>Puntuacion: <span th:text="${pelicula.puntuacion}"></span></p>
+
+<p>Fecha de estreno:
+    <span th:text="${pelicula.fechaEstreno}"></span>
+</p>
+
+<!-- CONDICIONES BOOLEANAS -->
+
+<p th:if="${clasica}">Esta pelicula es un clasico</p>
+
+<p th:unless="${clasica}">Esta pelicula no es un clasico</p>
+
+<a th:href="${pelicula.urlImdb}">Ver IMDB</a>
+
+<p>
+    <a th:href="@{/peliculas}">Volver al listado</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+
+<h1>Bienvenido a nuestra aplicacion de peliculas</h1>
+
+<ul>
+
+    <li>
+        <a th:href="@{/inicializar}">
+            Inicializar peliculas
+        </a>
+    </li>
+
+    <li>
+        <a th:href="@{/peliculas}">
+            Listado de peliculas
+        </a>
+    </li>
+
+    <li>
+        <a th:href="@{/peliculas/0}">
+            Ver Titanic
+        </a>
+    </li>
+
+</ul>
+
+</body>
+</html>

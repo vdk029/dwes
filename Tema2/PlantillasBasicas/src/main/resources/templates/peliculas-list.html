@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de peliculas</title>
+</head>
+<body>
+
+<h1>Listado de peliculas</h1>
+
+<table border="1">
+
+    <tr>
+        <th>Titulo</th>
+        <th>Genero</th>
+        <th>Puntuacion</th>
+        <th>IMDB</th>
+        <th>Portada</th>
+        <th>Fecha de estreno</th>
+    </tr>
+
+    <tr th:each="pelicula, estado : ${peliculas}">
+
+        <td>
+            <a th:href="@{/peliculas/{id}(id=${estado.index})}"
+               th:text="${pelicula.titulo}">
+            </a>
+        </td>
+
+        <td th:text="${pelicula.genero}"></td>
+
+        <td th:text="${pelicula.puntuacion}"></td>
+
+        <td>
+            <a th:href="${pelicula.urlImdb}">Ver IMDB</a>
+        </td>
+
+        <td>
+            <img th:src="${pelicula.urlPortada}"
+                 width="100" alt="Portada">
+        </td>
+
+        <td th:text="${pelicula.fechaEstreno}"></td>
+
+    </tr>
+
+</table>
+
+<a th:href="@{/}">Volver al inicio</a>
+
+</body>
+</html>
